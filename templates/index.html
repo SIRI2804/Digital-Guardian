@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Guardian</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- 🔥 Animated Cyber Video Background -->
+  <div class="background">
+    <video autoplay muted loop playsinline id="bgVideo">
+      <source src="{{ url_for('static', filename='cyber_background.mp4') }}" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
+
+  <div class="container">
+    <h1 class="title">DIGITAL GUARDIAN</h1>
+    <h2 class="subtitle">(Phishing Website Detector)</h2>
+
+    <div class="input-box">
+      <textarea id="urlInput" placeholder="Enter URLs (one per line)..."></textarea><br>
+      <button id="analyzeBtn">Analyze</button>
+      <button id="exportBtn">Export Results</button>
+    </div>
+
+    <div id="loading" class="hidden">
+      <div class="scanner"></div>
+      <p>🔍 Scanning URLs... Please wait</p>
+    </div>
+
+    <div id="summaryBox"></div>
+    <div id="resultContainer"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
